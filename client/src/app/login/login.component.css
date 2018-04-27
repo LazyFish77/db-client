@@ -1,0 +1,21 @@
+.form {
+    margin: auto;
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+div {
+   text-align: center;
+
+}
+.head {
+    font-size: 2.5em;
+}
+* {
+    font-family:  monospace;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
