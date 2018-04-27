@@ -8,16 +8,20 @@ import { HomeComponent } from './home/home.component';
 import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule
 
   ],
   providers: [HttpService],

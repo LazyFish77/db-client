@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         x => {
           console.log(x);
-          if(x.length !== 0) {
+          if(x) {
             this.onLogin.emit();
           } else {
             alert('invalid login');

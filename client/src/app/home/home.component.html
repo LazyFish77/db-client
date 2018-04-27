@@ -1,1 +1,10 @@
 <div>home</div>
+<mat-radio-group>
+        <mat-radio-button
+            class ="flex"
+            *ngFor="let query of queries"
+            [value]="query">
+                {{query}} 
+        </mat-radio-button>
+
+</mat-radio-group>
