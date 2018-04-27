@@ -5,13 +5,17 @@
   <div>
     <label>Username:</label>
   </div>
-  <input [(ngModel)]="userName" />
+  <input [(ngModel)]="username" type="text" />
   <div>
     <label>Password:</label>
   </div>
   <input [(ngModel)]="password" type="password" />
   <div class="flex">
-    <button (click)="login()">login</button>
-    <button>clear</button>
+    <input type="checkbox" [(ngModel)]="toggle" />
+    <div>
+      <button *ngIf="!toggle" (click)="login()">login</button>
+      <button *ngIf="toggle" (click)="registeruser()">register</button>
+      <button (click)="clear()">clear</button>
+    </div>
   </div>
 </div>

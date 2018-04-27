@@ -1,13 +1,11 @@
 .form {
     margin: auto;
-    width: 500px;
+    width: 20%;
     height: 200px;
     border: 1px solid black;
+    padding: 0% 5% 0% 5%;
 }
-div {
-   text-align: center;
 
-}
 .head {
     font-size: 2.5em;
 }
@@ -16,6 +14,15 @@ div {
 }
 .flex {
     display: flex;
-    justify-content: center;
-    padding: 2%;
+    justify-content: space-around;
+   width: 100%;
+   padding: 2%;
+    
+
+}
+input[type="text"] {
+    width: 100%;
+}
+input[type="password"] {
+    width: 100%;
 }
