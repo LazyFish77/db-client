@@ -13,20 +13,19 @@ export class LoginComponent implements OnInit {
   constructor(private httpSrv: HttpService) { }
 
   ngOnInit() {
-    
   }
   public login(): void {
     this.httpSrv.login(this.username, this.password)
       .subscribe(
         x => {
           console.log(x);
-          if(x) {
+          if (x) {
             this.onLogin.emit();
           } else {
             alert('invalid login');
           }
-          
-          //login token code here
+
+          // login token code here
         },
         e => console.log(e));
   }
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
         e => console.log(e));
   }
 
-  public clear() : void {
+  public clear(): void {
     this.username = null;
     this.password = null;
   }
