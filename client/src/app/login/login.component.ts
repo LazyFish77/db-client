@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { FormsModule, } from '@angular/forms';
 import { HttpService } from '../http.service';
 @Component({
@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
+  @Output() onLogin = new EventEmitter();
   constructor(private httpSrv: HttpService) { }
 
   ngOnInit() {
@@ -17,7 +18,16 @@ export class LoginComponent implements OnInit {
   public login(): void {
     this.httpSrv.login(this.username, this.password)
       .subscribe(
-        x => console.log(x),
+        x => {
+          console.log(x);
+          if(x.length !== 0) {
+            this.onLogin.emit();
+          } else {
+            alert('invalid login');
+          }
+          
+          //login token code here
+        },
         e => console.log(e));
   }
   public registeruser(): void {
