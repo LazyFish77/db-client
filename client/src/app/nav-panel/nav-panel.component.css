@@ -1,3 +1,21 @@
 .nav-panel {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-item {
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    color: #000000;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.nav-item:hover {
+    background-color: #000000;
+    border: 1px solid #0000FF;
+    color: #FFFFFF;
 }
