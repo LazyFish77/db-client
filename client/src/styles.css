@@ -4,3 +4,101 @@
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/* CSS for a 15 column grid system */
+.grid {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.grid::after {
+    clear: both;
+    content: "";
+    display: table;
+    box-sizing: border-box;
+}
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-7,
+.grid-8,
+.grid-9,
+.grid-10,
+.grid-11,
+.grid-12,
+.grid-13,
+.grid-14,
+.grid-15 {
+    float: left;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+.grid-1 {
+    width: 6.6667%;
+}
+
+.grid-2 {
+    width: 13.3333%;
+}
+
+.grid-3 {
+    width: 20%;
+}
+
+.grid-4 {
+    width: 26.6667%;
+}
+
+.grid-5 {
+    width: 33.3333%;
+}
+
+.grid-6 {
+    width: 40%;
+}
+
+.grid-7 {
+    width: 46.6667%;
+}
+
+.grid-8 {
+    width: 53.3333%;
+}
+
+.grid-9 {
+    width: 60%;
+}
+
+.grid-10 {
+    width: 66.6667%;
+}
+
+.grid-11 {
+    width: 73.3333%;
+}
+
+.grid-12 {
+    width: 80%;
+}
+
+.grid-13 {
+    width: 86.6667%;
+}
+
+.grid-14 {
+    width: 93.3333%;
+}
+
+.grid-15 {
+    width: 100%;
+}
