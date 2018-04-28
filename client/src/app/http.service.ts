@@ -34,7 +34,7 @@ export class HttpService {
 
   public query3(key): Observable<any> {
     let formData = new FormData();
-    formData.append('getSameLastName', key);
+    formData.append('getChildern', key);
     return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
   }
 
