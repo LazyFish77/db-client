@@ -1,10 +1,18 @@
-<div>home</div>
-<mat-radio-group>
+<div class="queries">
+    <div class="header">Select a search option.</div>
+    <mat-radio-group>
         <mat-radio-button
-            class ="flex"
-            *ngFor="let query of queries"
-            [value]="query">
-                {{query}} 
-        </mat-radio-button>
-
+        class ="flex"
+        *ngFor="let query of queries; let i = index"
+        [value]="i"
+        (click)="showInput(i)">
+        {{query}} 
+    </mat-radio-button>
 </mat-radio-group>
+</div>
+<div class="query-input">
+    <button mat-button>submit</button>
+    <mat-form-field class="wide-input">
+        <input matInput placeholder="search" class="wide-input" />
+    </mat-form-field>
+</div>

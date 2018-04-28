@@ -5,3 +5,30 @@
 mat-radio-button {
     display: block;
 }
+
+.queries {
+    border: 1px solid lightgray;
+    margin: auto;
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+}
+
+.header {
+    font-size: 2em;
+    text-align: center;
+    padding: 0% 0% 2% 0%;
+}
+.query-input {
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+    margin: auto;
+    border: 1px solid lightgray;
+}
+.wide-input {
+    width: 80%;
+    padding: 0% 0% 0% 1%;
+}
+button {
+    background-color: purple;
+    color: white;
+}

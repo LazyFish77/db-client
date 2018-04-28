@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MatInputModule } from '@angular/material/input';
 import { AuthorizationService } from './authorization.service';
 import { AuthGuardService } from './auth-guard.service';
-
+import { MatButtonModule } from '@angular/material/button';
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
     { path: 'login', component: LoginComponent },
@@ -32,7 +33,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     HttpService,
