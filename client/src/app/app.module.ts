@@ -15,37 +15,41 @@ import { AuthorizationService } from './authorization.service';
 import { AuthGuardService } from './auth-guard.service';
 import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NavPanelComponent } from './nav-panel/nav-panel.component';
+
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuardService] },
     { path: 'login', component: LoginComponent },
-    { path: '**', component: PageNotFoundComponent }
+    { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    AdminComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    RouterModule.forRoot(appRoutes),
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    MatRadioModule,
-    MatInputModule,
-    MatButtonModule,
-    NoopAnimationsModule
-  ],
-  providers: [
-    HttpService,
-    AuthorizationService,
-    AuthGuardService
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        HomeComponent,
+        AdminComponent,
+        PageNotFoundComponent,
+        NavPanelComponent
+    ],
+    imports: [
+        RouterModule.forRoot(appRoutes),
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        MatRadioModule,
+        MatInputModule,
+        MatButtonModule,
+        NoopAnimationsModule
+    ],
+    providers: [
+        HttpService,
+        AuthorizationService,
+        AuthGuardService
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }

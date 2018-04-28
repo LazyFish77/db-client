@@ -2,11 +2,11 @@
     <div class="header">Select a search option.</div>
     <mat-radio-group [(ngModel)]="selectedquery">
         <mat-radio-button        
-        class ="flex"
-        *ngFor="let query of queries; let i = index"
-        [value]="i+1">
-        {{query}} 
-    </mat-radio-button>
+            class ="flex"
+            *ngFor="let query of queries; let i = index"
+            [value]="i+1">
+            {{query}} 
+        </mat-radio-button>
 </mat-radio-group>
 </div>
 <div class="query-input">

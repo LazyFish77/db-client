@@ -1,24 +1,23 @@
 <div class="container">
-
-  <div class="form">
-    <div class="head">
-      login
+    <div class="form">
+        <div class="head">
+            login
+        </div>
+        <div>
+            <label>Username:</label>
+        </div>
+        <input [(ngModel)]="username" type="text" />
+        <div>
+            <label>Password:</label>
+        </div>
+        <input [(ngModel)]="password" type="password" />
+        <div class="flex">
+            <input type="checkbox" [(ngModel)]="toggle" />
+            <div>
+                <button *ngIf="!toggle" (click)="login()">login</button>
+                <button *ngIf="toggle" (click)="registeruser()">register</button>
+                <button (click)="clear()">clear</button>
+            </div>
+        </div>
     </div>
-    <div>
-      <label>Username:</label>
-    </div>
-    <input [(ngModel)]="username" type="text" />
-    <div>
-      <label>Password:</label>
-    </div>
-    <input [(ngModel)]="password" type="password" />
-    <div class="flex">
-      <input type="checkbox" [(ngModel)]="toggle" />
-      <div>
-        <button *ngIf="!toggle" (click)="login()">login</button>
-        <button *ngIf="toggle" (click)="registeruser()">register</button>
-        <button (click)="clear()">clear</button>
-      </div>
-    </div>
-  </div>
 </div>
