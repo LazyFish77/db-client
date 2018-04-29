@@ -13,11 +13,8 @@ export class HomeComponent implements OnInit {
     public userInput: string;
     public results: any;
     public newPerson: any = {};
-    public Levels: Array<string> = [
-        "admin",
-        "write",
-        "read"
-    ]
+    public deletePerson: any = {};
+    public priv: string;
 
     constructor(
         private http: HttpService
@@ -36,6 +33,7 @@ export class HomeComponent implements OnInit {
             `search for family members who  have  some  keyword, in their notes field`,
             'search for significant events on  a  particular  date '
         ];
+        this.priv = sessionStorage.getItem('privilege');
     }
 
     public onSubmit(): void {
@@ -44,9 +42,16 @@ export class HomeComponent implements OnInit {
         this.http[methodCall](this.userInput).subscribe(x => this.results = x);
     }
     public addPerson(): void {
-        console.log(this.newPerson);
         this.http.addPerson(this.newPerson)
             .subscribe(x => console.log(x));
+    }
+    public dPerson(): void {
+        console.log(this.deletePerson);
+        this.http.deletePerson(this.deletePerson)
+            .subscribe(x => {
+                console.log(x);
+            });
+
     }
     public invalidInputs(): boolean {
         let valid = true;

@@ -93,7 +93,18 @@ export class HttpService {
     }
     public setPrivilegeLevel(data): Observable<any> {
         const formData = new FormData();
-        formData.append('setPrivilegeLevel', JSON.stringify(data))
+        formData.append('setPrivilegeLevel', JSON.stringify(data));
+        return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
+    }
+    public deletePerson(person): Observable<any> {
+        const formData = new FormData();
+        formData.append('deletePerson', JSON.stringify(person));
+        return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
+    }
+
+    public getPrivilegeLevel(username): Observable<any> {
+        const formData = new FormData();
+        formData.append('getPrivilegeLevel', JSON.stringify(username))
         return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
     }
 

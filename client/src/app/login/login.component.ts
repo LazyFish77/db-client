@@ -24,18 +24,27 @@ export class LoginComponent implements OnInit {
     }
 
     public login(): void {
+        sessionStorage.setItem('username', this.username);                        
+        this.httpSrv.getPrivilegeLevel(this.username)
+        .subscribe(p => {
+            if (p[0]) {
+                sessionStorage.setItem('privilege', p[0].privilege_level);
+            } else {
+            sessionStorage.setItem('privilege', 'read');
+            }
+        });
         this.authSrv.logIn(this.username, this.password)
             .subscribe(
                 ok => {
-                    if (ok) {
-                        this.router.navigateByUrl('/home');
-                        this.httpSrv.userName = this.username;
+                    this.router.navigateByUrl('/home');
+                        if (ok) {
+                            this.httpSrv.userName = this.username;
+                        }
+                    },
+                    err => {
+                        alert('invalid login');
                     }
-                },
-                err => {
-                    alert('invalid login');
-                }
-            );
+                );
     }
 
     public registeruser(): void {

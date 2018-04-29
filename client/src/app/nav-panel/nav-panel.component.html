@@ -1,5 +1,5 @@
 <div class="nav-panel">
     <span class="nav-item" routerLink="/home">Home</span>
-    <span class="nav-item" routerLink="/admin" *ngIf="isAdmin()">Admin</span>
+    <span class="nav-item" routerLink="/admin" *ngIf="priv === 'admin'">Admin</span>
     <span class="nav-item" (click)="onLogoutClick()">Logout</span>
 </div>

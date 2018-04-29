@@ -10,21 +10,24 @@ import {HttpService} from '../http.service'
 })
 export class NavPanelComponent implements OnInit {
     public userName: string;
+    public priv: string;
     constructor(
         private router: Router,
         private authSrv: AuthorizationService,
         private http: HttpService
-    ) { }
+    ) {
+
+     }
 
     ngOnInit() {
-        console.log(this.http.userName);
-        this.userName = this.http.userName;
+        this.priv = sessionStorage.getItem('privilege');
     }
 
     public onLogoutClick(): void {
         this.authSrv.logOut();
         this.router.navigateByUrl('/login');
     }
+
     public isAdmin(): boolean {
         return this.userName === 'admin'
     }

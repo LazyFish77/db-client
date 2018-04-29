@@ -23,35 +23,61 @@
     </div>
 </div>
 
-<div class="form">
+<div class="form" *ngIf="priv == 'write' || priv =='admin'">
     <div class="header">Add Person</div>
-    <div>First Name:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.firstName" />
+        <mat-form-field>
+            <input matInput placeholder="First Name" [(ngModel)]="newPerson.firstName" />
+        </mat-form-field>
     </div>
-    <div>Middle Name:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.middleName" />
+        <mat-form-field>
+            <input matInput placeholder="Middle Name" [(ngModel)]="newPerson.middleName" />
+        </mat-form-field>
     </div>
-    <div>Last Name:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.lastName" />
+        <mat-form-field>
+            <input matInput placeholder="Last Name" [(ngModel)]="newPerson.lastName" />
+        </mat-form-field>
     </div>
-    <div>Gender:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.gender" />
+        <mat-form-field>
+            <input matInput placeholder="Gender" [(ngModel)]="newPerson.gender" />
+        </mat-form-field>
     </div>
-    <div>Address:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.address" />
+        <mat-form-field>
+            <input matInput placeholder="Address" [(ngModel)]="newPerson.address" />
+        </mat-form-field>
     </div>
-    <div>Phone:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.phone" />
+        <mat-form-field>
+            <input matInput placeholder="Phone" [(ngModel)]="newPerson.phone" />
+        </mat-form-field>
     </div>
-    <div>Notes:</div>
     <div>
-        <input placeholder="First Name" [(ngModel)]="newPerson.notes" />
+        <mat-form-field>
+            <input matInput placeholder="Notes" [(ngModel)]="newPerson.notes" />
+        </mat-form-field>
     </div>
     <button mat-button (click)="addPerson()" [disabled]="!invalidInputs()">add</button>
+</div>
+<div class="form" *ngIf="priv == 'write' || priv =='admin'">
+    <div class="header">Delete Person</div>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="First Name" [(ngModel)]="deletePerson.firstName" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Middle Name" [(ngModel)]="deletePerson.middleName" />
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Last Name" [(ngModel)]="deletePerson.lastName" />
+        </mat-form-field>
+    </div>
+    <button mat-button (click)="dPerson()" [disabled]="!deletePerson.firstName || !deletePerson.middleName || !deletePerson.lastName">add</button>
 </div>

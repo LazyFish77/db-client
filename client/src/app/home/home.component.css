@@ -54,9 +54,10 @@ button {
     border: 1px solid lightgray;
 }
 mat-select {
-    width: 40%;
+    width: 50%;
     border-bottom: 1px solid lightgray;
 }
 input {
-    width: 40%;
+    width: 100%;
+    /* border-bottom: 1px solid lightgray; */
 }

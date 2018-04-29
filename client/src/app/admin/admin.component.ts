@@ -7,7 +7,11 @@ import {HttpService} from '../http.service';
 })
 export class AdminComponent implements OnInit {
     public updatePrivilege: any = {};
-   
+    public Levels: Array<string> = [
+        "admin",
+        "write",
+        "read"
+    ]
     constructor(public httpSrv: HttpService) { 
     }
 
