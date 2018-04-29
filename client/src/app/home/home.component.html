@@ -1,7 +1,8 @@
 <div class="queries">
     <div class="header">Select a search option.</div>
     <mat-radio-group [(ngModel)]="selectedquery">
-        <mat-radio-button        
+        <mat-radio-button   
+            (click)="results = null"    
             class ="flex"
             *ngFor="let query of queries; let i = index"
             [value]="i+1">
@@ -16,10 +17,20 @@
     </mat-form-field>
 </div>
 <div class="container" *ngIf="results">
-    <div class="results" *ngFor="let person of results">
-        <div>First name: {{person.first_name}}</div>
-        <div>Middle name: {{person.middle_name || 'N/A'}}</div>
-        <div>Last name: {{person.last_name}}</div>
+    <div *ngIf="selectedquery !== 10">
+        <div class="results" *ngFor="let person of results">
+            <div>First name: {{person.first_name}}</div>
+            <div>Middle name: {{person.middle_name || 'N/A'}}</div>
+            <div>Last name: {{person.last_name}}</div>
+            {{selectedquery}}
+        </div>
+    </div>
+    <div *ngIf="selectedquery == 10" >
+        <div *ngFor="let date of results" class="results">
+            <div>event: {{date.type}}</div>
+            <div>place: {{date.location}}</div>
+        </div>
+
     </div>
 </div>
 

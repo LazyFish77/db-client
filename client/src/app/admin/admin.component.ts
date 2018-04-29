@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
     public setPrivilegeLevel(): void {
         this.httpSrv.setPrivilegeLevel(this.updatePrivilege)
             .subscribe(x => {
-
+                alert('updated');
             });
     }
 

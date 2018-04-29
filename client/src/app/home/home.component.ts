@@ -39,7 +39,10 @@ export class HomeComponent implements OnInit {
     public onSubmit(): void {
         console.log(this.selectedquery);
         const methodCall = `query${this.selectedquery}`;
-        this.http[methodCall](this.userInput).subscribe(x => this.results = x);
+        this.http[methodCall](this.userInput).subscribe(x =>{
+            this.results = x
+            console.log(this.results);
+        } );
     }
     public addPerson(): void {
         this.http.addPerson(this.newPerson)
