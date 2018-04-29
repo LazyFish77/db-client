@@ -12,6 +12,12 @@ export class HomeComponent implements OnInit {
     public selectedquery: number;
     public userInput: string;
     public results: any;
+    public newPerson: any = {};
+    public Levels: Array<string> = [
+        "admin",
+        "write",
+        "read"
+    ]
 
     constructor(
         private http: HttpService
@@ -36,6 +42,32 @@ export class HomeComponent implements OnInit {
         console.log(this.selectedquery);
         const methodCall = `query${this.selectedquery}`;
         this.http[methodCall](this.userInput).subscribe(x => this.results = x);
+    }
+    public addPerson(): void {
+        console.log(this.newPerson);
+        this.http.addPerson(this.newPerson)
+            .subscribe(x => console.log(x));
+    }
+    public invalidInputs(): boolean {
+        let valid = true;
+        if (!this.newPerson.firstName) {
+            valid = false;
+        } else if (!this.newPerson.firstName) {
+            valid = false;
+        } else if (!this.newPerson.middleName) {
+            valid = false;
+        } else if (!this.newPerson.lastName) {
+            valid = false;
+        } else if (!this.newPerson.gender) {
+            valid = false;
+        } else if (!this.newPerson.address) {
+            valid = false;
+        } else if (!this.newPerson.phone) {
+            valid = false;
+        } else if (!this.newPerson.notes) {
+            valid = false;
+        }
+        return valid;
     }
 
 }

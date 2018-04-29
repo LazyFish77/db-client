@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
                 ok => {
                     if (ok) {
                         this.router.navigateByUrl('/home');
+                        this.httpSrv.userName = this.username;
                     }
                 },
                 err => {

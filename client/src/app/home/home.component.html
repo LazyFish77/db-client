@@ -22,3 +22,36 @@
         <div>Last name: {{person.last_name}}</div>
     </div>
 </div>
+
+<div class="form">
+    <div class="header">Add Person</div>
+    <div>First Name:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.firstName" />
+    </div>
+    <div>Middle Name:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.middleName" />
+    </div>
+    <div>Last Name:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.lastName" />
+    </div>
+    <div>Gender:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.gender" />
+    </div>
+    <div>Address:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.address" />
+    </div>
+    <div>Phone:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.phone" />
+    </div>
+    <div>Notes:</div>
+    <div>
+        <input placeholder="First Name" [(ngModel)]="newPerson.notes" />
+    </div>
+    <button mat-button (click)="addPerson()" [disabled]="!invalidInputs()">add</button>
+</div>

@@ -24,7 +24,7 @@
         </div>
     </div> -->
 <!-- </div> -->
-<div class="form">
+<!-- <div class="form">
     <div>Add Person</div>
     <div>First Name:</div>
     <div><input placeholder="First Name" [(ngModel)]="newPerson.firstName" /></div>
@@ -36,7 +36,7 @@
     <div>
         <input placeholder="First Name" [(ngModel)]="newPerson.lastName" />
     </div>
-    <div>Gender</div>
+    <div>Gender:</div>
     <div>
         <input placeholder="First Name" [(ngModel)]="newPerson.gender" />
     </div>
@@ -53,4 +53,25 @@
         <input placeholder="First Name" [(ngModel)]="newPerson.notes" />
     </div>
     <button (click)="addPerson()" [disabled]="!invalidInputs()">add</button>
+</div> -->
+
+<div class ="form">
+     <div>Set privilege level</div>
+     <div>Username:</div>
+     <div><input [(ngModel)]="updatePrivilege.username" /></div>
+     <div>Privilege level</div>
+     <mat-select placeholder="level" [(ngModel)]="updatePrivilege.level">
+         <mat-option *ngFor="let level of Levels" [value]="level">
+             {{level}}
+         </mat-option>
+     </mat-select>
+     <div>
+        <button
+            [disabled]="!updatePrivilege.username || !updatePrivilege.level"
+            (click)="setPrivilegeLevel()"> 
+            update
+        </button>
+
+     </div>
+
 </div>

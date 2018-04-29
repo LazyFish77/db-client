@@ -45,3 +45,18 @@ button {
     border: 1px solid lightgray;
     width: 50%;
 }
+.form {
+    width: 50%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2% 2% 2% 2%;
+    border: 1px solid lightgray;
+}
+mat-select {
+    width: 40%;
+    border-bottom: 1px solid lightgray;
+}
+input {
+    width: 40%;
+}

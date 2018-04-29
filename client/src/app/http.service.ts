@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class HttpService {
+    public userName: string;
 
     constructor(
         private http: HttpClient
@@ -87,7 +88,12 @@ export class HttpService {
 
     public addPerson(person): Observable<any> {
         const formData = new FormData();
-        formData.append('addPerson', JSON.stringify(person),);
+        formData.append('addPerson', JSON.stringify(person));
+        return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
+    }
+    public setPrivilegeLevel(data): Observable<any> {
+        const formData = new FormData();
+        formData.append('setPrivilegeLevel', JSON.stringify(data))
         return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
     }
 

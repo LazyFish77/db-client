@@ -16,7 +16,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavPanelComponent } from './nav-panel/nav-panel.component';
-
+import { MatSelectModule } from '@angular/material/select';
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
     { path: 'admin', component: AdminComponent, canActivate: [AuthGuardService] },
@@ -41,6 +41,7 @@ const appRoutes: Routes = [
         MatRadioModule,
         MatInputModule,
         MatButtonModule,
+        MatSelectModule,
         NoopAnimationsModule
     ],
     providers: [
