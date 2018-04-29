@@ -85,4 +85,10 @@ export class HttpService {
         return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
     }
 
+    public addPerson(person): Observable<any> {
+        const formData = new FormData();
+        formData.append('addPerson', JSON.stringify(person),);
+        return this.http.post('http://webdev.cs.uwosh.edu/students/fischt77/queries.php', formData);
+    }
+
 }

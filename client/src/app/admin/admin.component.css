@@ -1,4 +1,6 @@
 /* helper for div placement... disable before use */
-div {
-    border: 1px solid black;
+.form {
+    width: 50%;
+    margin: auto;
+    padding: 2% 2% 2% 2%;
 }
