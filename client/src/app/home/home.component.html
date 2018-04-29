@@ -1,4 +1,4 @@
-<div class="queries">
+<div class="form">
     <div class="header">Select a search option.</div>
     <mat-radio-group [(ngModel)]="selectedquery">
         <mat-radio-button   
@@ -10,13 +10,13 @@
         </mat-radio-button>
 </mat-radio-group>
 </div>
-<div class="query-input">
+<div class="form">
     <button mat-button (click)="onSubmit()" [disabled]="selectedquery === undefined || userInput === undefined">submit</button>
     <mat-form-field class="wide-input">
         <input matInput placeholder="search" class="wide-input" [(ngModel)]="userInput" />
     </mat-form-field>
 </div>
-<div class="container" *ngIf="results">
+<div class="form" *ngIf="results">
     <div *ngIf="selectedquery !== 10">
         <div class="results" *ngFor="let person of results">
             <div>First name: {{person.first_name}}</div>
