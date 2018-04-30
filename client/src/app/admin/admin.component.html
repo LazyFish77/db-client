@@ -55,18 +55,21 @@
     <button (click)="addPerson()" [disabled]="!invalidInputs()">add</button>
 </div> -->
 
-<div class ="form">
-     <div>Set privilege level</div>
-     <div>Username:</div>
-     <div><input [(ngModel)]="updatePrivilege.username" /></div>
-     <div>Privilege level</div>
-     <mat-select placeholder="level" [(ngModel)]="updatePrivilege.level">
-         <mat-option *ngFor="let level of Levels" [value]="level">
-             {{level}}
-         </mat-option>
-     </mat-select>
+<div class="form">
+    <div class="header">Set Privilege Level</div>
+    <mat-form-field>
+        <input matInput placeholder="Username" [(ngModel)]="updatePrivilege.username" />
+    </mat-form-field>
+    <div>
+        <mat-select placeholder="level" [(ngModel)]="updatePrivilege.level">
+            <mat-option *ngFor="let level of Levels" [value]="level">
+                {{level}}
+            </mat-option>
+        </mat-select>
+    </div>
      <div>
         <button
+            mat-button
             [disabled]="!updatePrivilege.username || !updatePrivilege.level"
             (click)="setPrivilegeLevel()"> 
             update

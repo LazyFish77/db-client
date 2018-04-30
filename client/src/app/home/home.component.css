@@ -4,6 +4,7 @@
 }
 mat-radio-button {
     display: block;
+    overflow-wrap: break-word;
 }
 
 .queries {
@@ -30,7 +31,7 @@ mat-radio-button {
     padding: 0% 0% 0% 1%;
 }
 button {
-    background-color: purple;
+    background-color: #6540FF;
     color: white;
 }
 .results {
@@ -47,7 +48,7 @@ button {
     width: 50%;
 }
 .form {
-    width: 50%;
+    width: 35%;
     margin: auto;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -56,13 +57,17 @@ button {
     box-shadow: 5px 3px lightgray;
 }
 mat-select {
-    width: 50%;
+    width: 60%;
     border-bottom: 1px solid lightgray;
 }
 input {
     width: 100%;
     /* border-bottom: 1px solid lightgray; */
 }
-button:disabled {
-    color: blue;
+mat-form-field {
+    width: 60%;
+}
+.show-question {
+    text-align: center;
+    padding: 2% 0% 2% 0%;
 }

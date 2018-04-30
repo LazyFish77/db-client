@@ -6,15 +6,21 @@
             class ="flex"
             *ngFor="let query of queries; let i = index"
             [value]="i+1">
-            {{query}} 
+            query {{i+1}} 
         </mat-radio-button>
 </mat-radio-group>
-</div>
-<div class="form">
-    <button mat-button (click)="onSubmit()" [disabled]="selectedquery === undefined || userInput === undefined">submit</button>
-    <mat-form-field class="wide-input">
-        <input matInput placeholder="search" class="wide-input" [(ngModel)]="userInput" />
-    </mat-form-field>
+<div class="show-question" >{{queries[selectedquery-1] }}</div>
+<mat-form-field class="wide-input">
+    <input matInput placeholder="search" class="wide-input" [(ngModel)]="userInput" />
+</mat-form-field>
+    <div>
+        <button mat-button
+            (click)="onSubmit()"
+            [disabled]="selectedquery === undefined || userInput === undefined">
+            submit
+        </button>
+    </div>
+
 </div>
 <div class="form" *ngIf="results">
     <div *ngIf="selectedquery !== 10">
@@ -90,5 +96,5 @@
             <input matInput placeholder="Last Name" [(ngModel)]="deletePerson.lastName" />
         </mat-form-field>
     </div>
-    <button mat-button (click)="dPerson()" [disabled]="!deletePerson.firstName || !deletePerson.middleName || !deletePerson.lastName">add</button>
+    <button mat-button (click)="dPerson()" [disabled]="!deletePerson.firstName || !deletePerson.middleName || !deletePerson.lastName">delete</button>
 </div>
